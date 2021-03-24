@@ -37,7 +37,7 @@ module "public_fleet" {
   name = "${var.name}-public"
   subnet_ids = module.vpc.public_subnets
   target_capacity = 2
-  instance_types = [ "t3a.small" ]
+  instance_types = [ "t3a.nano", "t3.nano" ]
   key_name = module.key_pair.this_key_pair_key_name
   user_data = <<EOF
 #!/bin/bash

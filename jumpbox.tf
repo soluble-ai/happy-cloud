@@ -42,7 +42,7 @@ module "jumpbox_fleet" {
   name = "${var.name}-jumpbox"
   subnet_ids = [ module.vpc.public_subnets[0] ]
   target_capacity = 1
-  instance_types = [ "t3a.small" ]
+  instance_types = [ "t3a.nano", "t3.nano" ]
   key_name = module.key_pair.this_key_pair_key_name
   user_data = <<EOF
 sudo yum install -y python3
