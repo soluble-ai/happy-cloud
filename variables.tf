@@ -13,7 +13,3 @@ variable "region" {
 variable "create_key_pair" {
   default = true
 }
-
-variable "key_pair_public_key" {
-  default = ""
-}
