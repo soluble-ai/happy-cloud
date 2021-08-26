@@ -1,5 +1,6 @@
 module "jumpbox_sg" {
   source              = "terraform-aws-modules/security-group/aws"
+  version = "~> 3.18.0"
   name                = "${var.name}-jumpbox"
   vpc_id              = module.vpc.vpc_id
   ingress_cidr_blocks = ["0.0.0.0/0"]
@@ -10,6 +11,7 @@ module "jumpbox_sg" {
 
 module "jump_access_sg" {
   source              = "terraform-aws-modules/security-group/aws"
+  version = "~> 3.18.0"
   name                = "${var.name}-jumpbox_access"
   vpc_id              = module.vpc.vpc_id
   ingress_with_source_security_group_id = [

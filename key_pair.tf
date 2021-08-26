@@ -13,6 +13,7 @@ resource "aws_ssm_parameter" "key_pair" {
 
 module "key_pair" {
   source = "terraform-aws-modules/key-pair/aws"
+  version = "~> 0.6.0"
   key_name   = var.name
   public_key = tls_private_key.key_pair[0].public_key_openssh
   create_key_pair = var.create_key_pair

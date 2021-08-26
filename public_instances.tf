@@ -1,5 +1,6 @@
 module "public_instance_sg" {
   source              = "terraform-aws-modules/security-group/aws"
+  version = "~> 3.18.0"
   name                = "${var.name}-public_instance"
   vpc_id              = module.vpc.vpc_id
   ingress_cidr_blocks = ["0.0.0.0/0"]
